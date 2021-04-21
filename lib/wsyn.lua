@@ -1,5 +1,5 @@
 --- w/syn lib for norns
--- 0.1 @oootini, with thanks to @vicimity who wrote the w/syn code replicated here in Less Concepts 3.
+-- 0.1 copy/pasta by @oootini, with thanks to @vicimity who wrote the w/syn code in Less Concepts 3 replicated below.
 
 -- w/syn variables
 pset_wsyn_curve = 0
