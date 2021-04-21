@@ -41,7 +41,7 @@ wsyn = include('lib/wsyn')
 MusicUtil = require "musicutil"
 
 options = {}
-options.OUTPUT = {"audio", "midi", "audio + midi", "crow out 1+2", "crow ii JF", "w/syn", "audio + crow out 1+2 + w/syn" }
+options.OUTPUT = {"audio", "midi", "audio + midi", "crow out 1+2", "crow ii JF", "w/syn", "audio + crow + w/syn" }
 
 g = grid.connect()
 
@@ -167,9 +167,9 @@ function step()
           crow.ii.jf.play_note((note_num-60)/12,5)
         --w/syn output types
         elseif params:get("output") == 6 then
-          play_wsyn_note((note_num-60)/12,5)
+          crow.send("ii.wsyn.play_note(".. (note_num-60)/12 ..", " .. pset_wsyn_vel .. ")")
         elseif params:get("output") == 7 then
-          play_wsyn_note((note_num-60)/12,5)
+        	crow.send("ii.wsyn.play_note(".. (note_num-60)/12 ..", " .. pset_wsyn_vel .. ")")
           crow.output[1].volts = (note_num-60)/12
           crow.output[2].execute()
           engine.hz(freq)

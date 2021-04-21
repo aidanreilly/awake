@@ -2,17 +2,17 @@
 -- 0.1 @oootini, with thanks to @vicimity who wrote the w/syn code replicated here in Less Concepts 3.
 
 -- w/syn variables
-local pset_wsyn_curve = 0
-local pset_wsyn_ramp = 0
-local pset_wsyn_fm_index = 0
-local pset_wsyn_fm_env = 0
-local pset_wsyn_fm_ratio_num = 0
-local pset_wsyn_fm_ratio_den = 0
-local pset_wsyn_lpg_time = 0
-local pset_wsyn_lpg_symmetry = 0
-local pset_wsyn_vel = 0
+pset_wsyn_curve = 0
+pset_wsyn_ramp = 0
+pset_wsyn_fm_index = 0
+pset_wsyn_fm_env = 0
+pset_wsyn_fm_ratio_num = 0
+pset_wsyn_fm_ratio_den = 0
+pset_wsyn_lpg_time = 0
+pset_wsyn_lpg_symmetry = 0
+pset_wsyn_vel = 0
 
---w/syn support
+--w/syn params
 
 function wsyn_add_params()
   params:add_group("w/syn",12)
@@ -162,8 +162,4 @@ function wsyn_add_params()
     end
   }
   params:hide("wsyn_init")
-end
-
-local function play_wsyn_note(note)
-  crow.send("ii.wsyn.play_note(".. (note-48)/12 ..", " .. pset_wsyn_vel .. ")")
 end
